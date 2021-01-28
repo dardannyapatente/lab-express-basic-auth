@@ -4,6 +4,11 @@ const createError = require('http-errors');
 const logger = require('morgan');
 const sassMiddleware = require('node-sass-middleware');
 const serveFavicon = require('serve-favicon');
+const expressSession = require('express-session');
+const connectMongo = require('connect-mongo');
+const MongoStore = connectMongo(expressSession);
+const mongoose = require('mongoose');
+const User = require('./models/user');
 
 const indexRouter = require('./routes/index');
 
